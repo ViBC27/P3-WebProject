@@ -29,7 +29,8 @@ Esse projeto utiliza os seguintes recursos:
 
 * Node Js, NPM e Mysql instalados;
 * Nova Database: './database/db.sql';
-* Rodar npm run dev;
+* Rodar npm install na pasta do projeto;
+* Rodar npm run dev.
 
 ## Imagens
 
