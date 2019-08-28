@@ -1,0 +1,25 @@
+CREATE DATABASE OPINIONS;
+
+USE OPINIONS;
+
+CREATE TABLE users(
+    user_id INT NOT NULL,
+    username VARCHAR(25) NOT NULL,
+    password VARCHAR(75) NOT NULL,
+    fullname VARCHAR(100) NOT NULL
+);
+
+ALTER TABLE users ADD PRIMARY KEY(user_id);
+ALTER TABLE users MODIFY user_id INT NOT NULL AUTO_INCREMENT;
+
+CREATE TABLE opinions(
+    opinion_id INT NOT NULL,
+    title VARCHAR(100) NOT NULL,
+    description TEXT,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    user_id INT,
+    CONSTRAINT FK_USER FOREIGN KEY(user_id) REFERENCES users(user_id)
+);
+
+ALTER TABLE opinions ADD PRIMARY KEY(opinion_id);
+ALTER TABLE opinions MODIFY opinion_id INT NOT NULL AUTO_INCREMENT;
